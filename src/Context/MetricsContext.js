@@ -54,6 +54,7 @@ export function useMetrics(){
             const newArray = metrics.filter((metric) => (metric.id !== id))
             if(newArray.length === 0){
                 setMetrics([])
+                localStorage.setItem("metrics",JSON.stringify([]))
                 return
             }
             newArray[0].loss = 0
