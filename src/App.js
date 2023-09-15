@@ -8,7 +8,7 @@ function App() {
   const { calcPoints, metrics } = useMetrics()
   const [ points, setPoints ] = useState(0)
   
-  useEffect(()=>(setPoints(calcPoints())), [metrics])
+  useEffect(()=>(setPoints(calcPoints())), [metrics, calcPoints])
   return (
     <main>
       <SectionContainer title={`Metrics ${points}PTS`}>
