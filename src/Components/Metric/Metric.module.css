@@ -1,0 +1,31 @@
+.metric{
+    list-style: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.titulo{
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.date{
+    font-size: .8rem;
+}
+
+.delete{
+    background-color: #ff0000; /* Cor de fundo vermelha */
+    color: #fff; /* Cor do texto branca */
+    border: none; /* Remova a borda */
+    padding: 10px 15px; /* Espaçamento interno */
+    border-radius: 5px; /* Cantos arredondados */
+    cursor: pointer; /* Cursor de mão para indicar que é um botão */
+}
+
+.delete:hover {
+    background-color: #c03d3d; /* Cor de fundo vermelha mais escura no hover */
+    transition: background-color 0.3s ease;
+}

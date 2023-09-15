@@ -1,0 +1,17 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 20px; 
+    background-color: #FFF;
+    border: 1px solid #ccc; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 27.5px;
+}
+
+.title{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+}
