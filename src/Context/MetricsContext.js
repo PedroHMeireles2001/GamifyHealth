@@ -4,13 +4,20 @@ export const MetricsContext = createContext()
 MetricsContext.displayName = "Metrics"
 
 export default function MetricsProvider({children}) {
-    const [metrics,setMetrics] = useState(localStorage.getItem("metrics") ? localStorage.getItem("metrics") : [])
+    const [metrics,setMetrics] = useState(recuperarArray())
     return (
         <MetricsContext.Provider
             value={{ metrics, setMetrics }}>
             {children}
         </MetricsContext.Provider>
     )
+}
+function recuperarArray(){
+    const array = localStorage.getItem("metrics") ? JSON.parse(localStorage.getItem("metrics")) : []
+    array.forEach(element => {
+        element.date = new Date(element.date)
+    });
+    return array;
 }
 
 export function useMetrics(){
@@ -36,9 +43,9 @@ export function useMetrics(){
             console.log(loss)
         }
         setMetrics([...metrics, metric])
+        localStorage.setItem("metrics",JSON.stringify([...metrics, metric]))
         ultimoId++
         localStorage.setItem("ultimoid", ultimoId)
-        localStorage.setItem("metrics",metrics)
     }
     function deleteMetric(id){
         
@@ -56,6 +63,7 @@ export function useMetrics(){
                 item.loss = last.weight - item.weight
             }
             setMetrics(newArray)
+            localStorage.setItem("metrics",JSON.stringify(newArray))
         }
     }
 
@@ -69,6 +77,7 @@ export function useMetrics(){
         }
         return points
     }
+
 
     return {
         metrics,
