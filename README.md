@@ -7,11 +7,12 @@ GamifyHealth é um aplicativo que combina jogos com objetivos de saúde e fitnes
 - **Open Source:** Quer melhorar alguma coisa ou adicionar um recurso ??, é só da um pull request
 
 ## Cálculo de pontos
-(peso perdido x 30) / dias desde a última medida
+(x * 30) / y
+
 Nesta fórmula:
-- `peso perdido` representa a quantidade de peso perdido comparado com a última medida.
-- `30` é um fator usado para calcular a média mensal de perda de peso.
-- `dias desde a última medida` é o número de dias que se passaram desde a última medida de peso.
+- `x` representa a quantidade de peso perdido comparado com a última medida.
+- `30` é uma constante que representa 30 dias
+- `y` é o número de dias que se passaram desde a última medida de peso.
 
 ## Como Começar
 O programa é simples e intuitivo é só entrar no site https://gamifyhealth.netlify.app/ e adicionar a sua primeira medida
@@ -24,8 +25,4 @@ Sinta-se à vontade para contribuir para o projeto. Abra issues para relatar pro
 - HTML e CSS
 - Javascript
 - React.js
-
-## Pull Requests
-Se quiser contribuir, abre uma fork do projeto e envie um PR para a branch develop com as alterações feitas.
-Lembre sempre de deixar o código em inglês, testar antes de enviar e seguir padronização de pastas do projeto (Componentes react na pasta Components, etc...)
 
